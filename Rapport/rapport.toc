@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {I)}Introduction}{2}
+\contentsline {subsection}{\numberline {I.1)}Contexte}{2}
+\contentsline {subsection}{\numberline {I.2)}Objectifs}{2}
+\contentsline {section}{\numberline {II)}Probl\IeC {\`e}mes des r\IeC {\'e}seaux d'\IeC {\'e}changeur thermiques}{2}
+\contentsline {subsection}{\numberline {II.1)}Motivation}{2}
+\contentsline {subsection}{\numberline {II.2)}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les \IeC {\'e}changeurs thermiques}{3}
+\contentsline {subsubsection}{Types d'\IeC {\'e}changeurs}{4}
+\contentsline {subsubsection}{Montage des \IeC {\'e}changeurs}{5}
+\contentsline {subsection}{\numberline {II.3)}R\IeC {\'e}seaux d'\IeC {\'e}changeurs thermiques}{6}
+\contentsline {subsection}{\numberline {II.4)}Etat de l'art}{7}
+\contentsline {section}{\numberline {III)}Proposition d'une nouvelle solution : l'apprentissage par renforcement profond}{7}
+\contentsline {subsection}{\numberline {III.1)}Apprentissage par renforcement}{7}
+\contentsline {subsection}{\numberline {III.2)}Mod\IeC {\'e}lisation math\IeC {\'e}matique}{8}
+\contentsline {subsubsection}{Notations}{8}
+\contentsline {subsubsection}{Th\IeC {\'e}or\IeC {\`e}me de Bellmann}{10}
+\contentsline {subsubsection}{Algorithme du $Q$-learning}{10}
+\contentsline {subsection}{\numberline {III.3)}Apprentissage par renforcement profond}{11}
+\contentsline {section}{\numberline {IV)}Impl\IeC {\'e}mentation d'un exemple}{11}
+\contentsline {section}{\numberline {V)}Perspectives}{17}
+\contentsline {section}{\numberline {VI)}Remerciements}{18}

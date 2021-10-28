@@ -1,0 +1,119 @@
+\documentclass[a4paper] {report}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[all]{xy}
+\usepackage{textcomp, mathrsfs}
+\usepackage{bm}
+%\usepackage[french]{babel}
+%\frenchbsetup{CompactItemize=false}
+\usepackage{xcolor,epic,eepic,multicol, listings}
+\usepackage{pstricks, pst-plot, enumitem}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[framed,amsmath,thmmarks]{ntheorem}
+\usepackage{ulem, eurosym}
+\usepackage{graphicx, colortbl} 
+\usepackage{bmpsize, comment}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+
+\theorembodyfont{\upshape} 
+\theoremheaderfont{\bfseries}
+\theoremseparator{:} 
+
+\newtheorem{defi}{\uline{Définition}}[section]
+\newcommand{\defin}[1]{\begin{defi}\begin{minipage}[t]{16.4}#1\end{minipage}\end{defi}\vspace{0.3cm}}
+\newcommand{\defibox}[1]{\fbox{\begin{minipage}{\textwidth}\begin{defi}
+\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{defi}\end{minipage}}\vspace{0.3cm}}
+\renewcommand{\thedefi}{\empty{}} 
+
+\newtheorem{defis}{\uline{Définitions}}[section]
+\newcommand{\defins}[1]{\begin{defis}\begin{minipage}[t]{16.4}#1\end{minipage}\end{defis}\vspace{0.3cm}}
+\newcommand{\defisbox}[1]{\fbox{\begin{minipage}{\textwidth}\begin{defis}
+\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{defis}\end{minipage}}\vspace{0.3cm}}
+\renewcommand{\thedefis}{\empty{}} 
+
+\newtheorem{theo}{\uline{Théorème}}[section]
+\newcommand{\theor}[1]{\begin{theo}\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{theo}\vspace{0.3cm}}
+\newcommand{\theobox}[1]{\fbox{\begin{minipage}{\textwidth}\begin{theo}
+\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{theo}\end{minipage}}\vspace{0.3cm}}
+\renewcommand{\thetheo}{\empty{}} 
+
+%\newtheorem{propr}[theo]{\uline{Propriété}}
+%\newcommand{\propri}[1]{\begin{propr}\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{propr}\vspace{0.3cm}}
+%\newcommand{\proprbox}[1]{\fbox{\begin{minipage}{\textwidth}\begin{propr}
+%\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{propr}\end{minipage}}\vspace{0.3cm}}
+%\renewcommand{\thepropr}{\empty{}} 
+%
+%\newtheorem{proprs}[theo]{\uline{Propriétés}}
+%\newcommand{\propris}[1]{\begin{proprs}\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{proprs}\vspace{0.3cm}}
+%\newcommand{\proprsbox}[1]{\fbox{\begin{minipage}{\textwidth}\begin{proprs}
+%\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{proprs}\end{minipage}}\vspace{0.3cm}}
+%\renewcommand{\theproprs}{\empty{}} 
+
+\newtheorem{propo}[theo]{\uline{Proposition}}
+\newcommand{\propos}[1]{\begin{propo}\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{propo}\vspace{0.3cm}}
+\newcommand{\propobox}[1]{\fbox{\begin{minipage}{\textwidth}\begin{propo}
+\begin{minipage}[t]{16.4cm}#1\end{minipage}\end{propo}\end{minipage}}\vspace{0.3cm}}
+\renewcommand{\thepropo}{\empty{}} 
+
+\newcommand{\thbox}[2]{\fbox{\begin{minipage}{\textwidth}\textbf{\uline{#1} : }
+\begin{minipage}[t]{16.4cm}\upshape{#2}\end{minipage}\end{minipage}}\vspace{0.3cm}}
+
+\newcommand{\sg}[1]{\textbf{\underline{#1}}}
+\newcommand{\tsg}[1]{\textbf{\underline{#1} : }}
+
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi})}}
+\renewcommand{\labelenumii}{\textbf{\alph{enumii})}}
+
+\newcommand{\rem}[1]{\begin{flushleft}\textbf{\underline{Remarque} : }\begin{minipage}[t]{16.4cm} #1 \end{minipage}\end{flushleft}}
+\newcommand{\rems}[1]{\begin{flushleft}\textbf{\underline{Remarques} : }\begin{minipage}[t]{16.4cm} #1 \end{minipage}\end{flushleft}}
+\newcommand{\ex}[1]{\begin{flushleft} \textbf{\underline{Exemple} : }\begin{minipage}[t]{16.4cm} #1 \end{minipage} \end{flushleft}}
+\newcommand{\exo}[3]{\begin{flushleft}{\bf\LARGE \underline{Exercice #1} : }{\footnotesize #2} {\bf \begin{minipage}[t]{14cm} #3 \end{minipage}} \vspace{0.3cm} 
+\\\end{flushleft}}
+\newcommand{\titre}[1]{\begin{center} \bf{\huge #1 }\end{center}\vspace{0.5cm}}
+
+\setlength{\unitlength}{1cm}
+\psset{arrowinset=0}
+
+\definecolor{string}{rgb}{0.317,0.49,0.345}
+%\definecolor{keyword}{rgb}{0.80,0.47,0.2}
+%\definecolor{comments1}{rgb}{0,0.6,0}
+\definecolor{comments2}{rgb}{0.37,0.55,0.32}
+%\definecolor{fonctions}{rgb}{0,0.6,0}
+\definecolor{attributs}{rgb}{0.59,0.43,0.56}
+\lstset{		language=Python,
+ 				backgroundcolor=\color{white},
+                basicstyle=\color{black}\small,
+                keywordstyle=\color{orange}\ttfamily,
+                stringstyle=\color{olive}\ttfamily,
+                commentstyle=\color{gray}\ttfamily,
+                morecomment=[s][\color{lime}]{/**}{**/},
+                keepspaces=true,
+                morekeywords={module, export, constructor, let, of, number}, 
+                showstringspaces=false, 
+                tabsize = 2,
+                morekeywords={[2]taille, choix, nbIterations, geo, position, links, to, hashNumber, x, y, z}, 
+                keywordstyle={[2]\color{attributs}},
+                morekeywords={[3]go, goForTheFirstTime, getValue, allKeys, putValue, tan, angleBetweenTwoVectorsBetween0andPi, newFrom, substract, min, max, add, scale, push, setPosition },
+                keywordstyle={[3]\color{yellow}}, 
+                morekeywords={[4]0, 1, 2, 3, 4, 5, 6, 7, 8, "9"}, 
+                keywordstyle={[4]\color{blue}}
+}
+\newrgbcolor{xdxdff}{0.49019607843137253 0.49019607843137253 1.}
+\newrgbcolor{wwzzff}{0.4 0.6 1.}
+
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+
+\psset{xunit=1cm, yunit=1cm, linewidth=1.1pt, plotpoints=300}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$-$}
+\setlength{\leftmargini}{0.5cm}
+\everymath{\displaystyle}
+\graphicspath{{Images/}}
